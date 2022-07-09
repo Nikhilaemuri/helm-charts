@@ -58,11 +58,11 @@ podAnnotations: {}
 
 resources:
   requests:
-    cpu: "1000m"
-    memory: "2Gi"
+    cpu: "100m"
+    memory: "1Gi"
   limits:
-    cpu: "1000m"
-    memory: "2Gi"
+    cpu: "100m"
+    memory: "1Gi"
 
 protocol: http
 
@@ -160,8 +160,8 @@ ingress:
 
 readinessProbe:
   failureThreshold: 3
-  initialDelaySeconds: 10
-  periodSeconds: 10
+  initialDelaySeconds: 3
+  periodSeconds: 3
   successThreshold: 3
   timeoutSeconds: 5
 

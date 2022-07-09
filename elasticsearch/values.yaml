@@ -21,7 +21,7 @@ roles:
   - remote_cluster_client
   - transform
 
-replicas: 3
+replicas: 1
 minimumMasterNodes: 2
 
 esMajorVersion: ""
@@ -89,11 +89,11 @@ esJavaOpts: "" # example: "-Xmx1g -Xms1g"
 
 resources:
   requests:
-    cpu: "1000m"
-    memory: "2Gi"
+    cpu: "100m"
+    memory: "1Gi"
   limits:
-    cpu: "1000m"
-    memory: "2Gi"
+    cpu: "100m"
+    memory: "1Gi"
 
 initResources: {}
 # limits:
@@ -109,7 +109,7 @@ volumeClaimTemplate:
   accessModes: ["ReadWriteOnce"]
   resources:
     requests:
-      storage: 30Gi
+      storage: 10Gi
 
 rbac:
   create: false
@@ -233,8 +233,8 @@ sysctlVmMaxMapCount: 262144
 
 readinessProbe:
   failureThreshold: 3
-  initialDelaySeconds: 10
-  periodSeconds: 10
+  initialDelaySeconds: 3
+  periodSeconds: 3
   successThreshold: 3
   timeoutSeconds: 5
 

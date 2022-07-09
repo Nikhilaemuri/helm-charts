@@ -84,11 +84,11 @@ logstashJavaOpts: "-Xmx1g -Xms1g"
 
 resources:
   requests:
-    cpu: "100m"
-    memory: "1536Mi"
+    cpu: "10m"
+    memory: "150Mi"
   limits:
-    cpu: "1000m"
-    memory: "1536Mi"
+    cpu: "10m"
+    memory: "155Mi"
 
 volumeClaimTemplate:
   accessModes: ["ReadWriteOnce"]
@@ -97,7 +97,7 @@ volumeClaimTemplate:
       storage: 1Gi
 
 rbac:
-  create: false
+  create: true
   serviceAccountAnnotations: {}
   serviceAccountName: ""
   annotations:
@@ -224,9 +224,9 @@ livenessProbe:
   httpGet:
     path: /
     port: http
-  initialDelaySeconds: 300
-  periodSeconds: 10
-  timeoutSeconds: 5
+  initialDelaySeconds: 3
+  periodSeconds: 4
+  timeoutSeconds: 3
   failureThreshold: 3
   successThreshold: 1
 
@@ -234,9 +234,9 @@ readinessProbe:
   httpGet:
     path: /
     port: http
-  initialDelaySeconds: 60
-  periodSeconds: 10
-  timeoutSeconds: 5
+  initialDelaySeconds: 3
+  periodSeconds: 3
+  timeoutSeconds: 3
   failureThreshold: 3
   successThreshold: 3
 

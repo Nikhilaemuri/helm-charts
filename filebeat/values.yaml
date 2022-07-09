@@ -74,11 +74,11 @@ daemonset:
     privileged: false
   resources:
     requests:
-      cpu: "100m"
-      memory: "100Mi"
+      cpu: "10m"
+      memory: "10Mi"
     limits:
-      cpu: "1000m"
-      memory: "200Mi"
+      cpu: "10m"
+      memory: "20Mi"
   tolerations: []
 
 deployment:
@@ -146,11 +146,11 @@ deployment:
     privileged: false
   resources:
     requests:
-      cpu: "100m"
-      memory: "100Mi"
+      cpu: "10m"
+      memory: "10Mi"
     limits:
-      cpu: "1000m"
-      memory: "200Mi"
+      cpu: "10m"
+      memory: "20Mi"
   tolerations: []
 
 # Replicas being used for the filebeat deployment
@@ -190,8 +190,8 @@ livenessProbe:
         #!/usr/bin/env bash -e
         curl --fail 127.0.0.1:5066
   failureThreshold: 3
-  initialDelaySeconds: 10
-  periodSeconds: 10
+  initialDelaySeconds: 2
+  periodSeconds: 2
   timeoutSeconds: 5
 
 readinessProbe:
@@ -203,8 +203,8 @@ readinessProbe:
         #!/usr/bin/env bash -e
         filebeat test output
   failureThreshold: 3
-  initialDelaySeconds: 10
-  periodSeconds: 10
+  initialDelaySeconds: 3
+  periodSeconds: 3
   timeoutSeconds: 5
 
 # Whether this chart should self-manage its service account, role, and associated role binding.
