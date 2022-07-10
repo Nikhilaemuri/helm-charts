@@ -55,7 +55,6 @@ annotations: {}
 
 podAnnotations: {}
 # iam.amazonaws.com/role: es-cluster
-
 resources:
   requests:
     cpu: "100m"
