@@ -57,10 +57,10 @@ podAnnotations: {}
 # iam.amazonaws.com/role: es-cluster
 resources:
   requests:
-    cpu: "100m"
+    cpu: "700m"
     memory: "1Gi"
   limits:
-    cpu: "100m"
+    cpu: "700m"
     memory: "1Gi"
 
 protocol: http
